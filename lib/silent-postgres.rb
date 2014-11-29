@@ -4,7 +4,7 @@ if Rails.env.development? || Rails.env.test?
   require "silent-postgres/schema_plus"
 
   module SilentPostgres
-    SILENCED_METHODS = %w(tables table_exists? indexes column_definitions pk_and_sequence_for last_insert_id)
+    SILENCED_METHODS = %w(tables table_exists? column_exists? indexes column_definitions pk_and_sequence_for last_insert_id)
 
     def self.included(base)
       SILENCED_METHODS.each do |m|
